@@ -1,0 +1,6 @@
+__pycache__
+myenv
+instance/
+*.pyc
+env/
+config.py
