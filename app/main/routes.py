@@ -1,19 +1,15 @@
 from app.main import bp
-from flask import request,jsonify
-import validators
-from app.models.users import Community
 from app.status_codes import HTTP_400_BAD_REQUEST,HTTP_409_CONFLICT,HTTP_500_INTERNAL_SERVER_ERROR,HTTP_201_CREATED,HTTP_401_UNAUTHORIZED,HTTP_200_OK,HTTP_404_NOT_FOUND
 from app.extensions import db,bcrypt
-from flask_jwt_extended import jwt_required, get_jwt,current_user
+from flask_jwt_extended import jwt_required, get_jwt,current_user,get_jwt_identity
 from flask import request, jsonify
 from app.auth import bp
-from app.models.users import User ,Event,JoinRequest
-from app.status_codes import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
-from app.extensions import db
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from app.models.users import User ,Event,JoinRequest,Community
 from datetime import datetime
 from flask import send_file
 import io
+
+
 @bp.route('/')
 def index():
     return 'This is The Main Blueprint'
